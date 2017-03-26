@@ -4,7 +4,7 @@ Plugin Name: Custom Posts Generator
 Plugin URI: http://www.upwork.com/fl/olegtsibulnik
 Description: Generate Custom posts plugin - Upload and Activate.
 Author: Alicelf WebArtisan
-Version: 2.7.1
+Version: 2.7.2
 Author URI: http://www.upwork.com/fl/olegtsibulnik
 */
 
