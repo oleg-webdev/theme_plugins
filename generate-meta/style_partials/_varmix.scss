@@ -1,0 +1,43 @@
+$mainColor : #21759b;
+
+$infoColor : #67a6df;
+$successColor : #5ca545;
+$warningColor : #edcf87;
+$dangerColor : #df4343;
+
+$opacity : transparentize($mainColor, 0.5);
+$lighten : lighten($mainColor, 50%);
+
+$opacity : transparentize($mainColor, .5);
+$lighten : lighten($mainColor, 50%);
+
+@mixin gradient($color1 : $lighten, $color2 : $mainColor) {
+	background-color  : $color2;
+	background        : -webkit-gradient(linear, left 0%, left 100%, from($color1), to($color2));
+	background        : -webkit-linear-gradient(top, $color1, 0%, $color2, 100%);
+	background        : -moz-linear-gradient(top, $color1 0%, $color2 100%);
+	background        : -ms-linear-gradient(top, $color1 0%, $color2 100%);
+	background        : linear-gradient(to bottom, $color1 0%, $color2 100%);
+	background-repeat : repeat-x;
+	filter            : progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($color1)}', startColorstr='#{ie-hex-str($color2)}', GradientType=0);
+
+}
+
+@mixin transition($prop : all, $time : .3s) {
+	-webkit-transition : $prop, $time;
+	-moz-transition    : $prop, $time;
+	-ms-transition     : $prop, $time;
+	-o-transition      : $prop, $time;
+	transition         : $prop, $time;
+}
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}

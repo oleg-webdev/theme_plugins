@@ -1,0 +1,33 @@
+.comment-form {
+  /*Desktop*/ }
+  @media (min-width: 768px) {
+    .comment-form .form-submit {
+      width: 34%;
+      display: block;
+      float: right; }
+      .comment-form .form-submit input[type="submit"] {
+        width: 100%;
+        float: right;
+        margin-top: 20px; }
+      .comment-form .form-submit:after, .comment-form .form-submit:before {
+        content: "";
+        display: table;
+        width: 100%;
+        clear: both;
+        float: none; }
+    .comment-form .captha-holder {
+      display: block;
+      width: 65%;
+      float: left; }
+      .comment-form .captha-holder:after, .comment-form .captha-holder:before {
+        content: "";
+        display: table;
+        width: 100%;
+        clear: both;
+        float: none; } }
+  .comment-form .has-error input[name="captcha_code"] {
+    border-color: #a94442;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset; }
+    .comment-form .has-error input[name="captcha_code"]:focus {
+      border-color: #843534;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 6px #ce8483; }

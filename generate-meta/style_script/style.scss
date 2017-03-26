@@ -1,0 +1,397 @@
+@import "../style_partials/varmix";
+@import "../style_partials/loader";
+
+/**
+ * Sidebar box
+ */
+.GenerateMeta {
+	&.radio-meta {
+		@include clearfix();
+		p {
+			margin     : 0;
+			text-align : center;
+		}
+		p[class^="aa_theme_sidebar_options"] {
+			min-height          : 51px;
+			display             : inline-block;
+			width               : 33.333%;
+			float               : left;
+			background-position : top center;
+			background-repeat   : no-repeat;
+			label {
+				margin-top    : -19px;
+				line-height   : 50px;
+				margin-bottom : 0;
+				color         : transparent;
+			}
+			&[class$="aa_left_sidebar"] {
+				background-image : url("../img/sidebar-left.png");
+			}
+			&[class$="aa_right_sidebar"] {
+				background-image : url("../img/sidebar-right.png");
+			}
+			&[class$="aa_nosidebar"] {
+				background-image : url("../img/no-sidebar.png");
+			}
+		}
+	}
+}
+
+/**
+ * Uploads and galleries
+ */
+.aa-single-image {
+	/*Desktop*/
+	@media (min-width : 768px) {
+		width        : 80% !important;
+		margin-left  : auto;
+		margin-right : auto;
+		margin-top   : 15px;
+	}
+}
+
+.GenerateMeta {
+	background : #e0e0e0;
+	padding    : 15px;
+
+	img {
+		display   : block;
+		width     : 100%;
+		height    : auto;
+		max-width : 224px;
+		margin    : 0 auto;
+	}
+
+	label {
+		display       : block;
+		width         : 100%;
+		margin-bottom : 10px;
+		text-align    : center;
+	}
+
+	input[type="file"] {
+		width : 100%;
+
+	}
+	select,
+	input[type="text"],
+	input[type="number"] {
+		width : 100%;
+	}
+	textarea {
+		width      : 100%;
+		min-height : 150px;
+	}
+}
+
+.checkbox-meta {
+	label {
+		display : inline;
+	}
+}
+
+.al-filemeta-upload-wrap {
+	.uploaded-file-information {
+		background : $successColor;
+		text-align : center;
+		color      : #fff;
+		display    : block;
+		padding    : 5px;
+		margin-top : 5px;
+	}
+	.label-meta-upload-cp {
+		-moz-box-sizing : border-box;
+		box-sizing      : border-box;
+		display         : block;
+		padding         : 5px;
+		color           : #fff;
+		text-align      : center;
+		background      : $infoColor;
+		@include transition();
+		font-size       : 15px;
+		opacity         : 0.7;
+		width           : 100%;
+		i {
+			margin-right : 10px;
+		}
+		&:hover {
+			opacity : 1;
+		}
+	}
+	input[type="file"] {
+		width    : 1px;
+		height   : 1px;
+		overflow : hidden;
+		position : absolute;
+		opacity  : 0;
+		right    : 0;
+		bottom   : 0;
+	}
+}
+
+.al-meta-img-container-wrap {
+	position : relative;
+
+	.image-curtain {
+		position   : absolute;
+		left       : 0;
+		top        : 0;
+		width      : 100%;
+		height     : 100%;
+		background : rgba(51, 51, 51, 0.56);
+		z-index    : 1;
+		p {
+			text-align : center;
+			font       : normal 15px Arial;
+			color      : #fff;
+			top        : 20%;
+			position   : absolute;
+			z-index    : 3;
+		}
+	}
+
+	input[type="checkbox"] {
+		width    : 1px;
+		height   : 1px;
+		opacity  : 0;
+		margin   : 0;
+		padding  : 0;
+		overflow : hidden;
+		position : absolute;
+		bottom   : 0;
+	}
+	label[for$="_checkid"] {
+		-moz-box-sizing : border-box;
+		box-sizing      : border-box;
+		display         : block;
+		width           : 30px;
+		height          : 30px;
+		padding-top     : 5px;
+		background      : #fff;
+		@include transition();
+		position        : absolute;
+		z-index         : 2;
+		right           : 0;
+		top             : 0;
+		&:hover {
+			background : $dangerColor;
+			i {
+				color : #fff;
+			}
+		}
+	}
+}
+
+.al-gal-holder {
+	-moz-box-sizing : border-box;
+	box-sizing      : border-box;
+	& * {
+		-moz-box-sizing : border-box;
+		box-sizing      : border-box;
+	}
+
+	input[type="text"] {
+		display : none;
+	}
+}
+
+.al-gal-holder {
+	position : relative;
+}
+
+.delete-message {
+	-moz-box-sizing : border-box;
+	box-sizing      : border-box;
+	top             : 0;
+	position        : absolute;
+	width           : 100%;
+	height          : 100%;
+	background      : rgba(51, 51, 51, 0.51);
+	text-align      : center;
+	padding-top     : 50px;
+	line-height     : 30px;
+	min-height      : 100px;
+	color           : #fff;
+	font-size       : 17px;
+	z-index         : 1;
+
+}
+
+.gallery-existing-image-holder {
+	margin-bottom : 15px;
+	.img-holder-gal {
+		display         : block;
+		width           : 33%;
+		float           : left;
+		border          : 1px solid #ccc;
+		padding         : 3px;
+		margin          : 0;
+		overflow        : hidden;
+		height          : 84px;
+		-moz-box-sizing : border-box;
+		box-sizing      : border-box;
+		position        : relative;
+		& * {
+			-moz-box-sizing : border-box;
+			box-sizing      : border-box;
+		}
+		[data-delete-current-image] {
+			position         : absolute;
+			right            : 0;
+			display          : block;
+			background-color : $dangerColor;
+			height           : 15px;
+			width            : 15px;
+			cursor : pointer;
+			border-radius    : 50%;
+			text-align       : center;
+			line-height      : 16px;
+			color            : #fff;
+			&:hover{
+				background-color: #000;
+			}
+		}
+	}
+	img {
+		display : block;
+		width   : 100%;
+		height  : auto;
+	}
+}
+
+.change-mind {
+	position   : absolute;
+	z-index    : 2;
+	top        : 0;
+	right      : 0;
+	padding    : 10px 13px;
+	background : $dangerColor;
+	cursor     : pointer;
+	&:hover {
+		background : darken($dangerColor, 20%);
+	}
+}
+
+/**
+ * Repeater
+ */
+.generate-repeater-metabox {
+	position : relative;
+	> .labsolut {
+		.preview-area {
+			margin-top : 100px;
+		}
+	}
+	p {
+		margin-bottom : 3px;
+	}
+	button {
+		&[data-add-section] {
+			background-color : transparentize($successColor, .2);
+			color            : #fff;
+			border           : 1px solid transparentize($successColor, .1);
+			box-shadow       : inset 0 2px 2px lighten($successColor, 10%);
+			&:focus,
+			&:hover {
+				background-color : transparentize($successColor, .1);
+				color            : #fff;
+				border           : 1px solid transparentize($successColor, .1);
+				box-shadow       : none;
+			}
+		}
+	}
+	section {
+		position         : relative;
+		padding          : 10px;
+		background-color : #eee;
+		border           : 1px solid #ccc;
+		margin-bottom    : 15px;
+
+		&.collapsed-section {
+			overflow : hidden;
+			height   : 60px;
+		}
+
+		> [data-section-head] {
+			text-align       : center;
+			font-size        : 20px;
+			margin-bottom    : 10px;
+			padding          : 10px;
+			border           : 1px solid #ccc;
+			background-color : lighten($warningColor, 20%);
+			min-height       : 40px;
+			cursor           : pointer;
+			@include transition();
+			&:hover {
+				background-color : lighten($warningColor, 10%);
+			}
+		}
+		button {
+			&[data-destroy] {
+				height           : auto;
+				padding          : 6px 15px;
+				position         : absolute;
+				right            : 10px;
+				top              : 10px;
+				background-color : transparentize($dangerColor, .3);
+				color            : #fff;
+				border           : 1px solid transparentize($dangerColor, .2);
+				box-shadow       : inset 0 2px 2px lighten($dangerColor, 15%);
+				&:focus,
+				&:hover {
+					background-color : transparentize($dangerColor, .2);
+					color            : #fff;
+					border           : 1px solid $dangerColor;
+					box-shadow       : none;
+				}
+			}
+		}
+	}
+
+	.hidden-meta-repeater-container {
+		height     : 0;
+		width      : 0;
+		opacity    : 0;
+		min-height : 0;
+		margin     : 0;
+		padding    : 0;
+		top        : -2px;
+		left       : -2px;
+		overflow   : hidden;
+		float      : left;
+		position   : absolute;
+	}
+	.create-section-repeater {
+		text-align : right;
+	}
+	.ui-state-highlight {
+		background-color : $warningColor;
+		min-height       : 60px;
+	}
+	.image-holder {
+		background-color : #fff;
+		&:after,
+		&:before {
+			content : "";
+			display : table;
+			width   : 100%;
+			clear   : both;
+			float   : none;
+		}
+		.image-repeater-wrap {
+			margin : 10px;
+			/*Desktop*/
+			@media (min-width : 952px) {
+				float   : left;
+				width   : 30%;
+				border  : 1px solid #ccc;
+				padding : 5px;
+			}
+			> img {
+				display : block;
+				width   : 100%;
+				height  : auto;
+			}
+		}
+	}
+}
